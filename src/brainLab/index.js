@@ -1,4 +1,4 @@
-console.log("working");
+console.log("working slowly man");
 var basicStructure = {
   init: function () {
     this.mainJS();
