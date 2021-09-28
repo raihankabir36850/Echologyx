@@ -85,34 +85,6 @@ var basicStructure = {
         bttonText: "Shop Samples",
       },
     ];
-    console.log(
-      "🚀 ~ file: index.js ~ line 88 ~ sampleShopNavigationArray",
-      sampleShopNavigationArray
-    );
-    console.log(
-      "🚀 ~ file: index.js ~ line 88 ~ sampleShopNavigationArray",
-      sampleShopNavigationArray
-    );
-    console.log(
-      "🚀 ~ file: index.js ~ line 88 ~ sampleShopNavigationArray",
-      sampleShopNavigationArray
-    );
-    console.log(
-      "🚀 ~ file: index.js ~ line 88 ~ sampleShopNavigationArray",
-      sampleShopNavigationArray
-    );
-    console.log(
-      "🚀 ~ file: index.js ~ line 88 ~ sampleShopNavigationArray",
-      sampleShopNavigationArray
-    );
-    console.log(
-      "🚀 ~ file: index.js ~ line 88 ~ sampleShopNavigationArray",
-      sampleShopNavigationArray
-    );
-    console.log(
-      "🚀 ~ file: index.js ~ line 88 ~ sampleShopNavigationArray",
-      sampleShopNavigationArray
-    );
 
     sampleShopNavigationArray.filter(
       ({
@@ -185,12 +157,8 @@ var basicStructure = {
     });
   },
 };
-console.log("🚀 ~ file: index.js ~ line 160 ~ basicStructure", basicStructure);
-console.log("🚀 ~ file: index.js ~ line 160 ~ basicStructure", basicStructure);
-console.log(
-  "🚀 ~ file: index.js ~ line 160 ~ basicStructure",
-  basicStructure
-)(function pollFor() {
+
+(function pollFor() {
   if (
     document.querySelector("#header-navigation-mobile") ||
     document.querySelector("#header-navigation-desktop")
