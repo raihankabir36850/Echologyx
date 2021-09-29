@@ -1,0 +1,45 @@
+#main-navigation .list-inline.list-first {
+  display: flex;
+  li.list-inline-item.activeSatPackets {
+    order: 3;
+  }
+  li.list-inline-item.orderSatHardware {
+    display: none;
+  }
+  li.list-inline-item.ActivateTvApp {
+    order: 1;
+  }
+  li.list-inline-item.learnAboutHardware {
+    order: 2;
+  }
+}
+
+#mobile-navigation {
+  li.list-inline-item.mbOrderSatHardware {
+    display: none;
+  }
+  li.list-inline-item.ActivateTvApp {
+    order: 1;
+  }
+  li.list-inline-item.mbLearnAboutHardware {
+    order: 2;
+  }
+  li.list-inline-item.mbActiveSatPackets {
+    order: 3;
+  }
+  li.ilst-inline-item.meta-item.myHdAustria {
+    order: 4;
+  }
+  li.ilst-inline-item.meta-item.customerService {
+    order: 5;
+  }
+  li.ilst-inline-item.meta-item.streamingPlayer {
+    order: 6;
+  }
+  li.ilst-inline-item.meta-item.blog {
+    order: 7;
+  }
+  li.ilst-inline-item.meta-item.dealers {
+    order: 8;
+  }
+}
