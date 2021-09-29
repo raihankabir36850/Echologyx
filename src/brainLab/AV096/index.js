@@ -40,6 +40,11 @@ var basicStructureOfAV096 = {
       "div.checkbox-wrapper label.checkbox__label"
     ).innerHTML =
       "Tick here to keep up to date on news and offers,<br>including promotions related to your samples";
+    function reportWindowSize() {
+      console.log(window.innerHeight);
+      //widthOutput.textContent = window.innerWidth;
+    }
+    window.onresize = reportWindowSize;
   },
 };
 

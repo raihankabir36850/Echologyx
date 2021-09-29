@@ -1,10 +1,17 @@
 div.fieldset-description-style {
-  background-image: url(https://cdn.shopify.com/s/files/1/0327/1498/1421/files/Sample_Header.png?v=1632476002);
-  background-repeat: no-repeat;
-  background-position: 94%;
-  background-position-y: 24px;
-  background-size: 120px auto;
+  position: relative;
   background-color: #f8f6f7;
+  &::before {
+    content: "";
+    display: block; /*missing prop*/
+    background-image: url(https://cdn.shopify.com/s/files/1/0327/1498/1421/files/Sample_Header.png?v=1632476002);
+    background-repeat: no-repeat;
+    height: 80px;
+    width: 120px;
+    background-size: contain;
+    position: absolute;
+    right: 26px;
+  }
 }
 
 label.checkbox__label {
@@ -16,4 +23,39 @@ label.checkbox__label {
   margin-bottom: 15px;
 }
 
-// media query : 1170px and 454px
+@media screen and (max-width: 599px) {
+  div.fieldset-description-style {
+    &::before {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 992px) and (min-width: 600px) {
+  div.fieldset-description-style {
+    &::before {
+      right: 19px;
+      top: 33px;
+      width: 100px;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 993px) {
+  div.fieldset-description-style {
+    &::before {
+      display: none;
+    }
+  }
+}
+// @media screen and (max-width: 1172px) {
+//   div.fieldset-description-style {
+//     background-image: none;
+//   }
+// }
+
+// @media screen and (max-width: 980) {
+//   div.fieldset-description-style {
+//     background-image: none;
+//   }
+// }
