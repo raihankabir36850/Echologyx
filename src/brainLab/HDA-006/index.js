@@ -103,6 +103,28 @@ var basicStructure = {
         satReceiver,
         document.querySelector(".ilst-inline-item.meta-item.myHdAustria")
       );
+
+    document
+      .querySelectorAll("#main-navigation .list-inline.list-first li a")
+      .forEach((liItem) => {
+        if (window.location.pathname == liItem.pathname) {
+          liItem.classList.add("active-ab");
+        } else {
+          liItem.classList.remove("active-ab");
+        }
+      });
+
+    document
+      .querySelectorAll(
+        "#mobile-navigation .list-inline.list-first.mm-listview li a"
+      )
+      .forEach((liItem) => {
+        if (window.location.pathname == liItem.pathname) {
+          liItem.classList.add("active-cd");
+        } else {
+          liItem.classList.remove("active-cd");
+        }
+      });
   },
 };
 
