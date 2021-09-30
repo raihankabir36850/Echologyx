@@ -1,85 +1,121 @@
-var desktopNav = [
-  {
-    name: "packages",
+var basicStructure = {
+  init: function () {
+    this.mainJS();
   },
-  {
-    name: "activeSatPackets",
-    text: "Already have a SAT package?",
-  },
-  {
-    name: "orderSatHardware",
-  },
-  {
-    name: "ActivateTvApp",
-    text: "Learn about TV App",
-  },
-  {
-    name: "learnAboutHardware",
-    text: "Learn about hardware",
-  },
-];
+  mainJS: function () {
+    //For JS
+    var desktopNav = [
+      {
+        name: "Pakete",
+      },
+      {
+        name: "activeSatPackets",
+        text: "Bereits ein SAT paket?",
+      },
+      {
+        name: "orderSatHardware",
+      },
+      {
+        name: "ActivateTvApp",
+        text: "Mehr über TV-App",
+      },
+      {
+        name: "learnAboutHardware",
+        text: "Mehr über SAT-Hardware",
+      },
+    ];
 
-desktopNav.forEach((element, desktopIndex) => {
-  document
-    .querySelectorAll("#main-navigation .list-inline.list-first li")
-    .forEach((liElem, index) => {
-      if (desktopIndex === index) {
-        liElem.classList.add(element.name);
-        element.text
-          ? (liElem.querySelector("font").innerText = element.text)
-          : null;
-      }
+    desktopNav.forEach((element, desktopIndex) => {
+      document
+        .querySelectorAll("#main-navigation .list-inline.list-first li")
+        .forEach((liElem, index) => {
+          if (desktopIndex === index) {
+            liElem.classList.add(element.name);
+            element.text
+              ? (liElem.querySelector("a").innerText = element.text)
+              : null;
+          }
+        });
     });
-});
 
-var mobileNav = [
-  {
-    name: "packages",
-  },
-  {
-    name: "mbActiveSatPackets",
-    text: "Already have a SAT package?",
-  },
-  {
-    name: "mbOrderSatHardware",
-  },
-  {
-    name: "ActivateTvApp",
-    text: "Learn about TV App",
-  },
-  {
-    name: "mbLearnAboutHardware",
-    text: "Learn about hardware",
-  },
-  {
-    name: "streamingPlayer",
-  },
-  {
-    name: "myHdAustria",
-  },
-  {
-    name: "dealers",
-    text: "dealers-login",
-  },
-  {
-    name: "blog",
-  },
-  {
-    name: "customerService",
-  },
-];
+    var mobileNav = [
+      {
+        name: "packages",
+      },
+      {
+        name: "mbActiveSatPackets",
+        text: "Bereits ein SAT paket?",
+      },
+      {
+        name: "mbOrderSatHardware",
+      },
+      {
+        name: "ActivateTvApp",
+        text: "Mehr über TV-App",
+      },
+      {
+        name: "mbLearnAboutHardware",
+        text: "Erfahren Sie über Hardware",
+      },
+      {
+        name: "streamingPlayer",
+      },
+      {
+        name: "myHdAustria",
+      },
+      {
+        name: "dealers",
+        text: "Händler-Login",
+      },
+      {
+        name: "blog",
+      },
+      {
+        name: "customerService",
+      },
+    ];
 
-mobileNav.forEach((mobileNav, mobileNavIndex) => {
-  document
-    .querySelectorAll(
-      "#mobile-navigation .list-inline.list-first.mm-listview li"
-    )
-    .forEach((listItem, listIndex) => {
-      if (mobileNavIndex === listIndex) {
-        listItem.classList.add(mobileNav.name);
-        mobileNav.text
-          ? (listItem.querySelector("font").innerText = mobileNav.text)
-          : null;
-      }
+    mobileNav.forEach((mobileNav, mobileNavIndex) => {
+      document
+        .querySelectorAll(
+          "#mobile-navigation .list-inline.list-first.mm-listview li"
+        )
+        .forEach((listItem, listIndex) => {
+          if (mobileNavIndex === listIndex) {
+            listItem.classList.add(mobileNav.name);
+            mobileNav.text
+              ? (listItem.querySelector("a").innerText = mobileNav.text)
+              : null;
+          }
+        });
     });
-});
+
+    var satReceiver = document
+      .querySelector(".ilst-inline-item.meta-item.myHdAustria")
+      .cloneNode(true);
+    satReceiver.classList.remove("myHdAustria");
+    satReceiver.classList.add("satReceiver");
+    satReceiver.innerHTML =
+      "<a href='/hardware/aktivieren/'>Du hast schon ein SAT-Empfangsgerät?</a>";
+    document
+      .querySelector(".ilst-inline-item.meta-item.myHdAustria")
+      .parentNode.insertBefore(
+        satReceiver,
+        document.querySelector(".ilst-inline-item.meta-item.myHdAustria")
+      );
+  },
+};
+
+(function pollFor() {
+  if (
+    document.querySelector(".header-bottom .container #main-navigation") &&
+    document.querySelector("#mobile-navigation ul.list-inline")
+  ) {
+    basicStructure.init();
+    console.log("Variation- A: 01");
+  } else {
+    setTimeout(pollFor, 25);
+  }
+})();
+
+export default basicStructure;

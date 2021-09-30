@@ -15,6 +15,10 @@
 }
 
 #mobile-navigation {
+  ul.list-inline.list-first.mm-listview {
+    display: flex;
+    flex-direction: column;
+  }
   li.list-inline-item.mbOrderSatHardware {
     display: none;
   }
@@ -27,19 +31,22 @@
   li.list-inline-item.mbActiveSatPackets {
     order: 3;
   }
-  li.ilst-inline-item.meta-item.myHdAustria {
+  li.ilst-inline-item.meta-item.satReceiver {
     order: 4;
   }
-  li.ilst-inline-item.meta-item.customerService {
+  li.ilst-inline-item.meta-item.myHdAustria {
     order: 5;
   }
-  li.ilst-inline-item.meta-item.streamingPlayer {
+  li.ilst-inline-item.meta-item.customerService {
     order: 6;
   }
-  li.ilst-inline-item.meta-item.blog {
+  li.ilst-inline-item.meta-item.streamingPlayer {
     order: 7;
   }
-  li.ilst-inline-item.meta-item.dealers {
+  li.ilst-inline-item.meta-item.blog {
     order: 8;
+  }
+  li.ilst-inline-item.meta-item.dealers {
+    order: 9;
   }
 }
